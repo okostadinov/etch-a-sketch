@@ -2,7 +2,7 @@ html {
     background-color: #DDEEFF;
 }
 
-#mainContainer {
+#container {
     display: flex;
     flex-direction: column;
 }
@@ -22,17 +22,39 @@ html {
     justify-content: space-between;
 }
 
-#gridField {
-    visibility: hidden;
+#gridAndSidebar {
+    margin: 50px 20px;
     display: grid;
-    width: 480px;
-    height: 480px;
-    align-self: center;
-    border: 1px solid black;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+#sideBtnContainer {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#gridField {
+    grid-column: 2 / 6;
+    grid-row: 1 / 4;
+    margin: auto;
+    background-color: white;
+    visibility: hidden;
+    border: 3px solid #1e7a7a;
+    box-shadow: 5px 5px 10px 3px #106d65;
+    border-radius: 5px;
+    display: grid;
+    width: 500px;
+    height: 500px;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
 .grid-square {
-    border: 1px solid black;
+    box-sizing: border-box;
 }
 
 .btn-gen-grid {
@@ -46,4 +68,18 @@ html {
     scale: 1.02;
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px #25ccbe;
+}
+
+.btn-set-color {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(169, 196, 73);
+    border: 1px solid #47530f;
+}
+
+.btn-set-color:hover {
+    scale: 1.02;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px #636b17;
 }
