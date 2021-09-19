@@ -1,6 +1,6 @@
 /* Extracts the value from the clicked button,
  * based on which generates the grid field.
- */ 
+ */
 function generateGrid(e) {
     let gridSize;
 
@@ -18,7 +18,6 @@ function generateGrid(e) {
     }
     gridField.textContent = ''; // clear current content
     gridField.setAttribute('style', 'visibility: visible');
-    
     gridField.style.setProperty('--grid-rows', gridSize);
     gridField.style.setProperty('--grid-cols', gridSize);
 
